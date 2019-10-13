@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stannieman.AudioPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Stannieman.AudioPlayer.AudioFormats">
+            <summary>
+            Enum representing various audio types.
+            </summary>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.AudioPlayer.FinishedPlaying">
+            <summary>
+            Indicates that a track finished playing.
+            </summary>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.AudioPlayer.StoppedPlaying">
+            <summary>
+            Indicates that a track stopped playing but was not finished.
+            </summary>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.AudioPlayer.PositionChanged">
+            <summary>
+            Indicates that the position in a track has changed.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.SetFileAsync(System.String,System.String)">
+            <summary>
+            Sets a file to play and sets the ID of the track for that file name.
+            </summary>
+            <param name="fullFileName">Full path of the file to play.</param>
+            <param name="trackId">ID of the track.</param>
+            <returns>Task instance.</returns>
+            <exception cref="T:Stannieman.AudioPlayer.AudioPlayerException">If something goes wrong while setting the file.</exception>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.PlayAsync">
+            <summary>
+            Starts playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+            <exception cref="T:Stannieman.AudioPlayer.AudioPlayerException">If something goes wrong while starting the playback of the set file.</exception>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.PauseAsync">
+            <summary>
+            Pauses playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+            <exception cref="T:Stannieman.AudioPlayer.AudioPlayerException">If something goes wrong while pausing the playback of the set file.</exception>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.StopAsync">
+            <summary>
+            Stops playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+            <exception cref="T:Stannieman.AudioPlayer.AudioPlayerException">If something goes wrong while stopping the playback of the set file.</exception>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.GetCurrentTrackPositionAsync">
+            <summary>
+            Returns the current position in the track.
+            </summary>
+            <returns>Current position in the track.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.ReportPosition(System.Object)">
+            <summary>
+            Callback for the timer to report the position in the track.
+            </summary>
+            <param name="state">State.</param>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.OnPlaybackStoppedAsync(System.Object,NAudio.Wave.StoppedEventArgs)">
+            <summary>
+            Handler for if playback of a file stopped.
+            </summary>
+            <param name="sender">Sender.</param>
+            <param name="e">StoppedEventArgs.</param>
+            <returns>Task instance.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.GetAudioFormatForFileName(System.String)">
+            <summary>
+            Returns the audio format for a given file name.
+            The returned format is based on the file's extension.
+            </summary>
+            <param name="fileName">File name to get audio format for.</param>
+            <returns>The audio format of the file.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayer.Dispose">
+            <summary>
+            Disposes the player.
+            </summary>
+        </member>
+        <member name="T:Stannieman.AudioPlayer.FinishedStoppedPlayingEventArgs">
+            <summary>
+            EventArgs for events to report a track has finished playing.
+            </summary>
+        </member>
+        <member name="P:Stannieman.AudioPlayer.FinishedStoppedPlayingEventArgs.TrackId">
+            <summary>
+            ID of the track that finished playing.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.FinishedStoppedPlayingEventArgs.#ctor(System.String)">
+            <summary>
+            Constructor accepting a track ID of a track that finished playing.
+            </summary>
+            <param name="trackId">ID of the track.</param>
+        </member>
+        <member name="T:Stannieman.AudioPlayer.PositionChangedEventArgs">
+            <summary>
+            EventArgs for events to report the current position in a track.
+            </summary>
+        </member>
+        <member name="P:Stannieman.AudioPlayer.PositionChangedEventArgs.TrackId">
+            <summary>
+            ID of the track of which the position changed.
+            </summary>
+        </member>
+        <member name="P:Stannieman.AudioPlayer.PositionChangedEventArgs.Position">
+            <summary>
+            The position in the track.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.PositionChangedEventArgs.#ctor(System.String,Stannieman.AudioPlayer.TrackPosition)">
+            <summary>
+            Constructor accepting a track ID and a trackposition struct representing the position in the track.
+            </summary>
+            <param name="trackId">ID of the track.</param>
+            <param name="trackPosition">A TrackPosition instance.</param>
+        </member>
+        <member name="T:Stannieman.AudioPlayer.AudioPlayerException">
+            <summary>
+            Exception regarding an audio player.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayerException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayerException.#ctor(System.String)">
+            <summary>
+            Constructor taking a message that describes the error.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.AudioPlayerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor taking a message that describes the error and an inner exception.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.IAudioPlayer.FinishedPlaying">
+            <summary>
+            Indicates that a track finished playing.
+            </summary>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.IAudioPlayer.StoppedPlaying">
+            <summary>
+            Indicates that a track stopped playing but was not finished.
+            </summary>
+        </member>
+        <member name="E:Stannieman.AudioPlayer.IAudioPlayer.PositionChanged">
+            <summary>
+            Indicates that the position in a track has changed.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.IAudioPlayer.SetFileAsync(System.String,System.String)">
+            <summary>
+            Sets a file to play and sets the ID of the track for that file name.
+            </summary>
+            <param name="fullFileName">Full path of the file to play.</param>
+            <param name="trackId">ID of the track.</param>
+            <returns>Task instance.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.IAudioPlayer.PlayAsync">
+            <summary>
+            Starts playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.IAudioPlayer.PauseAsync">
+            <summary>
+            Pauses playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.IAudioPlayer.StopAsync">
+            <summary>
+            Stops playback of the set file.
+            </summary>
+            <returns>Task instance.</returns>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.IAudioPlayer.GetCurrentTrackPositionAsync">
+            <summary>
+            Returns the current position in the track.
+            </summary>
+            <returns>Current position in the track.</returns>
+        </member>
+        <member name="T:Stannieman.AudioPlayer.TrackPosition">
+            <summary>
+            Struct representing a track's duration and a position in the track.
+            </summary>
+        </member>
+        <member name="P:Stannieman.AudioPlayer.TrackPosition.Duration">
+            <summary>
+            Duration of the track.
+            </summary>
+        </member>
+        <member name="P:Stannieman.AudioPlayer.TrackPosition.CurrentTime">
+            <summary>
+            Position in the track.
+            </summary>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.TrackPosition.#ctor(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Constructor taking time spans that represent the duration of a track and a position in the track.
+            </summary>
+            <param name="duration">Duration of a track.</param>
+            <param name="currentTime">Position in a track.</param>
+        </member>
+        <member name="M:Stannieman.AudioPlayer.TrackPosition.Equals(Stannieman.AudioPlayer.TrackPosition)">
+            <summary>
+            Equals implementation to check if a given TrackPosition instance equals this one.
+            </summary>
+            <param name="trackPosition">Trackposition to check equality of.</param>
+            <returns>Whether the given instance is equal to this one.</returns>
+        </member>
+    </members>
+</doc>
