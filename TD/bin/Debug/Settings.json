@@ -1,6 +1,9 @@
 {
+  "LoopAudio": false,
   "Width": 120,
   "Height": 67,
+  "PixelX": 10,
+  "PixelY": 10,
   "GifPath": "Resources/TD_Full.gif",
   "AudioPath": "Resources/TD_Song.mp3"
 }

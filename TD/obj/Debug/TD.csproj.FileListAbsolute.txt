@@ -25,10 +25,6 @@ F:\Projekte\C#\TD\TD\obj\Debug\TD.exe.manifest
 F:\Projekte\C#\TD\TD\obj\Debug\TD.application
 F:\Projekte\C#\TD\TD\bin\Debug\Resources\TD_Song.mp3
 F:\Projekte\C#\TD\TD\bin\Debug\NAudio.dll
-F:\Projekte\C#\TD\TD\bin\Debug\NAudio.Vorbis.dll
-F:\Projekte\C#\TD\TD\bin\Debug\NVorbis.dll
 F:\Projekte\C#\TD\TD\bin\Debug\NAudio.xml
-F:\Projekte\C#\TD\TD\bin\Debug\NAudio.Vorbis.xml
-F:\Projekte\C#\TD\TD\bin\Debug\NVorbis.xml
 F:\Projekte\C#\TD\TD\bin\Debug\Newtonsoft.Json.dll
 F:\Projekte\C#\TD\TD\bin\Debug\Newtonsoft.Json.xml
